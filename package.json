@@ -1,0 +1,33 @@
+{
+  "name": "mhaehko",
+  "version": "0.0.1",
+  "description": "Analyze a TypeScript/JavaScript project's dependencies and generates a dependency graph using TypeScript APIs",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "lint": "biome check src --write && biome check opt --write",
+    "format": "biome format --write",
+    "test": "tsx --test test/*.test.ts",
+    "coverage": "tsx opt/lcov/index.ts",
+    "build": "tsx opt/build/index.ts"
+  },
+  "keywords": [
+    "dependencies",
+    "dependency",
+    "graph",
+    "circular"
+  ],
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md",
+    "package.json"
+  ],
+  "author": "Pho Thin Mg <phothinmg@disroot.org>",
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.6",
+    "@types/node": "^25.4.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
