@@ -1,9 +1,23 @@
 {
   "name": "mhaehko",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Analyze a TypeScript/JavaScript project's dependencies and generates a dependency graph using TypeScript APIs",
-  "main": "index.js",
   "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.cts",
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
   "scripts": {
     "lint": "biome check src --write && biome check opt --write",
     "format": "biome format --write",
@@ -31,14 +45,14 @@
     "typescript": "^5.9.3"
   },
   "publishConfig": {
-		"provenance": true,
-		"access": "public"
-	},
-	"repository": {
-		"url": "git+https://github.com/phothinmg/mhaehko.git",
-		"type": "git"
-	},
-	"bugs": {
-		"url": "https://github.com/phothinmg/mhaehko/issues"
-	}
+    "provenance": true,
+    "access": "public"
+  },
+  "repository": {
+    "url": "git+https://github.com/phothinmg/mhaehko.git",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/phothinmg/mhaehko/issues"
+  }
 }
